@@ -3,7 +3,7 @@ import styles from '../styles/Home.module.css'
 import axios from 'axios';
 
 const Home = ({animals, error}) => {
-    console.log(animals);
+
     if (error) {
         return <div>An error occured: {error.message}</div>;
     }
