@@ -1,9 +1,11 @@
 import React from "react";
-import styles from '../styles/AbyssinianCat.module.css'
+import styles from '../styles/Animal.modul.css'
 import axios from "axios/index";
+import Link from 'next/link';
+
 
 const AbyssinianCat = ({animal}) => {
-    console.log("AbyssinianCat",animal);
+    console.log("AbyssinianCat", animal);
     return (
         <div className={styles.container}>
             <div className={styles.article_heading_wrapper}>
@@ -15,7 +17,7 @@ const AbyssinianCat = ({animal}) => {
                             alt=""/>
                         <div className={styles.author_inline}>Kidadl Team</div>
                     </a>
-                    <div className="date-inline">{animal.created_at.slice(0,10)}</div>
+                    <div className="date-inline">{animal.created_at.slice(0, 10)}</div>
                 </div>
                 <h1>{animal.article_name}</h1>
             </div>
@@ -23,7 +25,7 @@ const AbyssinianCat = ({animal}) => {
                 <img src={animal.hero_image} alt={animal.hero_alt_text} className="article-hero-image"/>
             </div>
             <div className="container-article-text">
-                <div dangerouslySetInnerHTML={{__html:animal.introduction}}/>
+                <div dangerouslySetInnerHTML={{__html: animal.introduction}}/>
             </div>
             <div className="fact-file-container">
                 <h2 className="fact-file-top-heading">{animal.animal_name} Fact File</h2>
@@ -47,7 +49,7 @@ const AbyssinianCat = ({animal}) => {
                         </div>
                         <div className="fact-container">
                             <h4 className="fact-question">How long are they?</h4>
-                            <p>{animal.long}</p>
+                            <p dangerouslySetInnerHTML={{__html: animal.long}}/>
                         </div>
                         <div className="fact-container">
                             <h4 className="fact-question">How tall are they?</h4>
@@ -101,15 +103,20 @@ const AbyssinianCat = ({animal}) => {
                     </div>
                 </div>
 
-                <div dangerouslySetInnerHTML={{__html:animal.body_copy}}/>
+                <div dangerouslySetInnerHTML={{__html: animal.body_copy}}/>
 
+            </div>
+            <div className={styles.backToHome}>
+                <Link href="/">
+                    <a>← Back to home</a>
+                </Link>
             </div>
         </div>
     )
 };
 AbyssinianCat.getInitialProps = async ctx => {
     try {
-        const res = await axios.get('https://limitless-temple-43758.herokuapp.com/animals');
+        const res = await axios.get('https://strapi-backend-project.herokuapp.com/animals');
         const animal = res.data[0];
         return {animal};
     } catch (error) {
