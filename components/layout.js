@@ -4,7 +4,7 @@ export default function Layout({ children, home }) {
     return <div>
         {children}
         {!home && (
-            <div>
+            <div className={"back-home"}>
                 <Link href="/">
                     <a>← Back to home</a>
                 </Link>
