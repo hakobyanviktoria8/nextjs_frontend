@@ -12,7 +12,7 @@ const Animal = ({animals}) => {
     return (
         <Layout>
             {animalData.map(animal => (
-                <div key={animal.id}>
+                <div key={animal.id} className={"article"}>
                     <div className={"article_heading_wrapper"}>
                         <h4>Animals</h4>
                         <div>

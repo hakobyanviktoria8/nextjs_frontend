@@ -6,6 +6,7 @@ body {
     font-size: 18px;
     line-height: 28px;
     font-weight: 300;
+    border: 1px solid red;
 }
 
 a {
@@ -19,11 +20,15 @@ a {
     padding: 0;
 }
 
+.article {
+    border: 1px solid;
+}
+
 .container {
     z-index: 0;
     width: 90%;
     max-width: 1040px;
-    min-width: 940px;
+    /*min-width: 940px;*/
     margin-right: auto;
     margin-left: auto;
     padding-right: 40px;
@@ -66,7 +71,7 @@ h1 {
 .hero-wrapper {
     position: relative;
     display: inline-block;
-    width: 980px;
+    width: 100%;
     margin-top: -120px;
 }
 
@@ -188,4 +193,49 @@ h1 {
 .back-home:hover {
     background: #5e5e5e;
     color: white;
+}
+
+.Home_card__2SdtB {
+    max-width: 320px;
+}
+
+
+@media screen and (max-width: 426px) {
+    .container {
+        padding: 0 30px !important;
+        width: 100% !important;
+    }
+
+    .article_heading_wrapper {
+        padding: 60px 20px 180px;
+    }
+
+    .fact-file-row {
+        flex-direction: column;
+    }
+
+    .fact-file-container {
+        padding: 20px;
+    }
+
+}
+
+@media screen and (max-width: 321px) {
+    h1 {
+        font-size: 40px;
+        line-height: 50px;
+    }
+    .date-inline {
+        margin-left: 1rem;
+    }
+    .fact-file-top-heading {
+        font-size: 32px;
+    }
+    .fact-container-wrap {
+        flex-direction: column;
+    }
+    .container-article-body h2 {
+        font-size: 30px;
+        line-height: 35px;
+    }
 }

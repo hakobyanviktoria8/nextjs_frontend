@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-export default function Layout({ children, home }) {
+export default function Layout({children, home}) {
     return <div>
         {children}
         {!home && (
@@ -10,5 +10,5 @@ export default function Layout({ children, home }) {
                 </Link>
             </div>
         )}
-        </div>
+    </div>
 }
